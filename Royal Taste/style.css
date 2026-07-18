@@ -1,0 +1,274 @@
+/* style.css */
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body {
+     font-family: 'Poppins', sans-serif;
+     background: #0f0f0f;
+     color: white;
+     overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+nav {
+     width: 100%;
+     padding: 20px 8%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 1000;
+     background: rgba(0, 0, 0, 0.5);
+     backdrop-filter: blur(10px);
+}
+
+.logo {
+     font-size: 2rem;
+     font-weight: 700;
+     color: #f8c15c;
+}
+
+.nav-links {
+     display: flex;
+     gap: 30px;
+}
+
+.nav-links a {
+     text-decoration: none;
+     color: white;
+     font-weight: 500;
+     transition: 0.3s;
+}
+
+.nav-links a:hover {
+     color: #f8c15c;
+}
+
+/* HERO */
+
+.hero {
+     height: 100vh;
+     background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+     display: flex;
+     align-items: center;
+     padding: 0 8%;
+}
+
+.hero-content {
+     max-width: 650px;
+     animation: fadeIn 1.2s ease;
+}
+
+.hero-content span {
+     color: #f8c15c;
+     font-size: 1.1rem;
+     letter-spacing: 2px;
+}
+
+.hero-content h1 {
+     font-size: 5rem;
+     line-height: 1.1;
+     margin: 20px 0;
+}
+
+.hero-content p {
+     font-size: 1.1rem;
+     color: #d6d6d6;
+     line-height: 1.8;
+     margin-bottom: 35px;
+}
+
+.buttons {
+     display: flex;
+     gap: 20px;
+}
+
+button {
+     padding: 14px 32px;
+     border: none;
+     border-radius: 50px;
+     cursor: pointer;
+     font-size: 1rem;
+     font-weight: 600;
+     transition: 0.3s;
+}
+
+.primary {
+     background: #f8c15c;
+     color: black;
+}
+
+.primary:hover {
+     transform: translateY(-3px);
+     background: #ffcf76;
+}
+
+.secondary {
+     background: transparent;
+     border: 2px solid white;
+     color: white;
+}
+
+.secondary:hover {
+     background: white;
+     color: black;
+}
+
+/* CARDS */
+
+.cards {
+     padding: 100px 8%;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 30px;
+     background: #151515;
+}
+
+.card {
+     background: #1f1f1f;
+     padding: 40px 30px;
+     border-radius: 20px;
+     transition: 0.4s;
+     border: 1px solid transparent;
+}
+
+.card:hover {
+     transform: translateY(-10px);
+     border-color: #f8c15c;
+}
+
+.card h2 {
+     margin-bottom: 15px;
+     color: #f8c15c;
+}
+
+.card p {
+     color: #cfcfcf;
+     line-height: 1.7;
+}
+
+/* MENU */
+
+.menu {
+     padding: 100px 8%;
+     background: #101010;
+}
+
+.menu h1 {
+     text-align: center;
+     font-size: 3rem;
+     margin-bottom: 60px;
+}
+
+.menu-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+     gap: 30px;
+}
+
+.menu-card {
+     background: #1a1a1a;
+     padding: 35px;
+     border-radius: 20px;
+     transition: 0.4s;
+     position: relative;
+     overflow: hidden;
+}
+
+.menu-card::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: -100%;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(90deg,
+               transparent,
+               rgba(255, 255, 255, 0.1),
+               transparent);
+     transition: 0.7s;
+}
+
+.menu-card:hover::before {
+     left: 100%;
+}
+
+.menu-card:hover {
+     transform: translateY(-10px);
+}
+
+.menu-card h2 {
+     margin-bottom: 15px;
+     color: #f8c15c;
+}
+
+.menu-card p {
+     color: #d0d0d0;
+     margin-bottom: 20px;
+     line-height: 1.6;
+}
+
+.menu-card span {
+     font-size: 1.4rem;
+     font-weight: 700;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+     from {
+          opacity: 0;
+          transform: translateY(40px);
+     }
+
+     to {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+
+     .hero-content h1 {
+          font-size: 3.5rem;
+     }
+
+     nav {
+          flex-direction: column;
+          gap: 15px;
+     }
+
+}
+
+@media(max-width:600px) {
+
+     .hero {
+          text-align: center;
+          justify-content: center;
+     }
+
+     .buttons {
+          justify-content: center;
+          flex-wrap: wrap;
+     }
+
+     .hero-content h1 {
+          font-size: 2.7rem;
+     }
+
+     .menu h1 {
+          font-size: 2.2rem;
+     }
+
+}
